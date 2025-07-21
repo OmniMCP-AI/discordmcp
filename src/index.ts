@@ -240,6 +240,7 @@ async function main() {
   
   try {
     // Login to Discord
+    console.info("Logging in to Discord...");
     await client.login(token);
 
     // Start MCP server
