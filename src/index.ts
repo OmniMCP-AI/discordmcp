@@ -239,9 +239,13 @@ async function main() {
   }
   
   try {
-    // Login to Discord
-    console.info("Logging in to Discord...");
-    await client.login(token);
+    try{
+      // Login to Discord
+      console.info("Logging in to Discord...");
+      await client.login(token);
+    } catch (error) {
+      console.error("Error logging in to Discord:", error);
+    }
 
     // Start MCP server
     const transport = new StdioServerTransport();
